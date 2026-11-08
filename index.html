@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>body{margin:0}</style>
+</head>
+<body>
+<title>حدائق ميار</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="حدائق ميار: تصميم وتنفيذ وصيانة الحدائق في الرياض. عشب طبيعي وصناعي، ري أوتوماتيكي، برجولات، نوافير، إنارة خارجية.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Reem+Kufi:wght@500;700&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LandscapingBusiness","name":"حدائق ميار","telephone":"+966502401487","areaServed":"الرياض","address":{"@type":"PostalAddress","addressLocality":"الرياض","addressCountry":"SA"},"description":"تصميم وتنفيذ وصيانة الحدائق في الرياض"}
+</script>
+<style>
+/* Layout: single RTL page. Header bar, hero with a drawn garden plan, services grid, process list, contact band. */
+:root{
+  --bg:#F2F5EE; --surface:#FFFFFF; --fg:#13231A; --muted:#51635A; --line:#D6DECF;
+  --accent:#2C6B3E; --accent-fg:#FFFFFF; --sand:#B98A4A; --deep:#173A27; --deep-fg:#EAF2E6;
+  --font-display:'Reem Kufi','IBM Plex Sans Arabic',sans-serif;
+  --font-body:'IBM Plex Sans Arabic',system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D1710; --surface:#15231A; --fg:#E6EFE3; --muted:#9DB0A3; --line:#25382B;
+    --accent:#58B070; --accent-fg:#08140C; --sand:#D2A767; --deep:#0A1D12; --deep-fg:#E6EFE3;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D1710; --surface:#15231A; --fg:#E6EFE3; --muted:#9DB0A3; --line:#25382B;
+  --accent:#58B070; --accent-fg:#08140C; --sand:#D2A767; --deep:#0A1D12; --deep-fg:#E6EFE3;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:17px;line-height:1.8;
+  padding-block:0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1080px;margin-inline:auto}
+h1,h2,h3{font-family:var(--font-display);line-height:1.35;text-wrap:balance;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sand);outline-offset:3px;border-radius:6px}
+
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:18px;flex-wrap:wrap}
+.brand{font-family:var(--font-display);font-weight:700;font-size:1.5rem;color:var(--accent)}
+.brand small{display:block;font-family:var(--font-body);font-weight:400;font-size:.8rem;color:var(--muted);letter-spacing:.02em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:10px;
+  background:var(--accent);color:var(--accent-fg);font-weight:600;text-decoration:none;border:0;cursor:pointer;font:inherit;font-weight:600}
+.btn.ghost{background:transparent;color:var(--fg);border:1.5px solid var(--line)}
+.btn:hover{filter:brightness(1.08)}
+
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-block:36px 56px}
+.eyebrow{color:var(--sand);font-weight:600;letter-spacing:.04em;font-size:.95rem}
+.hero h1{font-size:clamp(2rem,5.2vw,3.4rem);font-weight:700;margin-block:10px 16px}
+.hero p{color:var(--muted);max-width:34em;margin:0 0 26px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.plan{width:100%;height:auto;max-width:100%;border-radius:18px;background:var(--surface);border:1px solid var(--line)}
+.plan text{font-family:var(--font-body);fill:var(--muted);font-size:13px}
+
+section{padding-block:48px}
+section>h2,.wrap>h2{font-size:clamp(1.6rem,3.6vw,2.2rem);margin-bottom:8px}
+.lead{color:var(--muted);margin:0 0 28px;max-width:38em}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;min-width:0}
+.card h3{font-size:1.15rem;margin-bottom:6px;color:var(--accent)}
+.card p{margin:0;color:var(--muted);font-size:.97rem;line-height:1.75}
+
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0;counter-reset:s;border-block:1px solid var(--line)}
+.steps li{counter-increment:s;padding:24px 20px;min-width:0}
+.steps li+li{border-inline-start:1px solid var(--line)}
+.steps li::before{content:counter(s);font-family:var(--font-display);font-size:2rem;color:var(--sand);display:block;line-height:1;margin-bottom:10px}
+.steps b{display:block;font-family:var(--font-display);font-size:1.15rem;margin-bottom:4px}
+.steps span{color:var(--muted);font-size:.96rem}
+@media(max-width:640px){.steps li+li{border-inline-start:0;border-top:1px solid var(--line)}}
+
+.climate{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.climate .card h3{color:var(--fg)}
+
+.contact{background:var(--deep);color:var(--deep-fg);border-radius:22px;padding:40px clamp(20px,5vw,48px);margin-block:24px 40px}
+.contact h2{font-size:clamp(1.6rem,3.6vw,2.3rem)}
+.contact p{color:var(--deep-fg);opacity:.85;margin:8px 0 24px;max-width:36em}
+.phone{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.num{font-family:var(--font-display);font-size:1.7rem;letter-spacing:.06em;direction:ltr;unicode-bidi:isolate;user-select:all}
+.contact .btn.ghost{color:var(--deep-fg);border-color:rgba(234,242,230,.35)}
+.contact .btn.wa{background:var(--sand);color:#1b1306}
+.area{margin-top:22px;font-size:.95rem;opacity:.8}
+footer{color:var(--muted);font-size:.9rem;padding-block:8px 36px;text-align:center}
+
+@media(max-width:820px){.hero{grid-template-columns:1fr;gap:28px}.climate{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:no-preference){.btn{transition:filter .15s}}
+</style>
+
+<div dir="rtl" lang="ar" class="wrap">
+  <header>
+    <div class="brand">حدائق ميار<small>تنسيق وصيانة الحدائق في الرياض</small></div>
+    <a class="btn" href="https://wa.me/966502401487" target="_blank" rel="noopener">راسلنا على واتساب</a>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <div class="eyebrow">الرياض</div>
+        <h1>حديقة تناسب مناخ الرياض وتبقى جميلة طوال السنة</h1>
+        <p>نصمم حديقتك وننفذها ونتولى صيانتها. من العشب الطبيعي والصناعي إلى الري الأوتوماتيكي والبرجولات والإنارة الخارجية، كل شيء من فريق واحد.</p>
+        <div class="cta">
+          <a class="btn" href="https://wa.me/966502401487" target="_blank" rel="noopener">اطلب معاينة وعرض سعر</a>
+          <a class="btn ghost" href="#services">شاهد خدماتنا</a>
+        </div>
+      </div>
+      <svg class="plan" viewBox="0 0 400 320" role="img" aria-label="مخطط حديقة مرسوم باليد يوضح البرجولة والعشب والنافورة والأحواض">
+        <rect x="18" y="18" width="364" height="284" rx="10" fill="none" stroke="var(--line)" stroke-width="2" stroke-dasharray="6 6"/>
+        <rect x="36" y="36" width="190" height="120" rx="8" fill="var(--accent)" opacity=".22"/>
+        <text x="131" y="102" text-anchor="middle">عشب</text>
+        <rect x="246" y="36" width="118" height="84" rx="8" fill="none" stroke="var(--sand)" stroke-width="2.5"/>
+        <path d="M246 56h118M246 76h118M246 96h118" stroke="var(--sand)" stroke-width="1.5" opacity=".6"/>
+        <text x="305" y="141" text-anchor="middle">برجولة</text>
+        <circle cx="96" cy="230" r="42" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+        <circle cx="96" cy="230" r="22" fill="var(--accent)" opacity=".28"/>
+        <circle cx="96" cy="230" r="5" fill="var(--accent)"/>
+        <text x="96" y="290" text-anchor="middle">نافورة</text>
+        <path d="M170 200h196M170 230h196M170 260h196" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="3 7"/>
+        <g fill="var(--accent)"><circle cx="190" cy="200" r="6"/><circle cx="250" cy="230" r="6"/><circle cx="310" cy="260" r="6"/><circle cx="350" cy="200" r="6"/></g>
+        <text x="268" y="190" text-anchor="middle">خط ري بالتنقيط</text>
+        <text x="262" y="296" text-anchor="middle">أحواض ونباتات</text>
+      </svg>
+    </div>
+
+    <section id="services">
+      <h2>خدماتنا</h2>
+      <p class="lead">نغطي الحديقة من الفكرة إلى الصيانة اليومية، ونختار المواد التي تتحمل الحر والشمس.</p>
+      <div class="grid">
+        <div class="card"><h3>تصميم الحدائق</h3><p>مخطط يناسب مساحتك وطريقة استخدامك لها، قبل بدء أي تنفيذ.</p></div>
+        <div class="card"><h3>عشب طبيعي</h3><p>تجهيز التربة وفرد العشب بنوع يناسب الجو، مع إرشادات للعناية به.</p></div>
+        <div class="card"><h3>عشب صناعي</h3><p>مظهر أخضر دائم وبدون سقي، مناسب للأسطح والمساحات الصغيرة والملاعب.</p></div>
+        <div class="card"><h3>ري أوتوماتيكي</h3><p>شبكات ري ومؤقتات تضبط السقي وتوفر الماء وتخفف الجهد اليومي.</p></div>
+        <div class="card"><h3>بديل الخشب WPC وPVC</h3><p>أرضيات وسياجات بمظهر الخشب تتحمل الشمس والرطوبة ولا تحتاج دهانًا متكررًا.</p></div>
+        <div class="card"><h3>أحواض فايبرجلاس</h3><p>أحواض زراعة بأشكال وأحجام متعددة لتزيين المداخل والجلسات.</p></div>
+        <div class="card"><h3>برجولات وجلسات</h3><p>مظلات وجلسات خارجية تمنحك ظلًا ومكانًا للسهر في الحديقة.</p></div>
+        <div class="card"><h3>نوافير وشلالات</h3><p>عناصر مائية تضيف هدوءًا وتلطف الجو في الزاوية التي تضعها فيها.</p></div>
+        <div class="card"><h3>إنارة خارجية</h3><p>إضاءة للممرات والأشجار والجلسات تُظهر الحديقة في الليل.</p></div>
+        <div class="card"><h3>صيانة الحدائق</h3><p>زيارات دورية للقص والتسميد ومتابعة الري والعناية بالنباتات.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>كيف نعمل</h2>
+      <p class="lead">أربع مراحل واضحة من أول اتصال حتى تسليم الحديقة.</p>
+      <ol class="steps">
+        <li><b>معاينة</b><span>نزور الموقع ونقيس المساحة ونسمع ما تريده.</span></li>
+        <li><b>تصميم وعرض سعر</b><span>تستلم المخطط وعرضًا مكتوبًا بالبنود والأسعار.</span></li>
+        <li><b>تنفيذ</b><span>نركّب العشب والري والعناصر ونسلمك الحديقة جاهزة.</span></li>
+        <li><b>صيانة</b><span>نستمر في العناية بها إن رغبت بزيارات دورية.</span></li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>حديقة تناسب جو الرياض</h2>
+      <p class="lead">صيف حار وجاف ومياه غالية. لذلك نبدأ من هذه الحقائق.</p>
+      <div class="climate">
+        <div class="card"><h3>نباتات تتحمل الجفاف</h3><p>نرشح لك نباتات وأشجارًا تتحمل الحرارة وقلة الماء، فتقل تكلفة العناية بها.</p></div>
+        <div class="card"><h3>ري يوفر الماء</h3><p>نظام الري بالتنقيط والمؤقتات يوصل الماء للجذور ويقلل الهدر في الحر.</p></div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" style="padding-block:40px">
+      <h2>اطلب معاينة وعرض سعر</h2>
+      <p>أرسل لنا مساحة حديقتك وصورة لها على واتساب، ونرد عليك بتفاصيل التنفيذ والتكلفة.</p>
+      <div class="phone">
+        <span class="num" id="num">0502401487</span>
+        <button class="btn ghost" id="copy" type="button">نسخ الرقم</button>
+        <a class="btn wa" href="https://wa.me/966502401487" target="_blank" rel="noopener">واتساب</a>
+      </div>
+      <div class="area">نخدم مدينة الرياض وما حولها.</div>
+    </section>
+  </main>
+
+  <footer>© حدائق ميار · الرياض</footer>
+</div>
+
+<script>
+(function(){
+  var b=document.getElementById('copy'),n=document.getElementById('num');
+  b.addEventListener('click',function(){
+    function done(){b.textContent='تم النسخ';setTimeout(function(){b.textContent='نسخ الرقم'},1800)}
+    try{
+      navigator.clipboard.writeText('0502401487').then(done,function(){sel()});
+    }catch(e){sel()}
+    function sel(){var r=document.createRange();r.selectNodeContents(n);var s=window.getSelection();s.removeAllRanges();s.addRange(r);b.textContent='حدّد الرقم وانسخه'}
+  });
+})();
+</script>
+
+</body>
+</html>
